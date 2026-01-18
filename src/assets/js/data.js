@@ -5,24 +5,24 @@
 import logo from '../img/Logo/Logo.png'
 
 // Home swiper img
-import mainoffer from '../img/mainoffer.png'
+import mainoffer from '../img/mainoffer.jpg'
 
 // Trending images
-import frame1437 from '../img/Frame1437.png'
-import frame1438 from '../img/Frame1438.png'
-import frame1439 from '../img/Frame1439.png'
-import frame1444 from '../img/Frame1444.png'
+import frame1437 from '../img/Frame1437.jpg'
+import frame1438 from '../img/Frame1438.jpg'
+import frame1439 from '../img/Frame1439.jpg'
+import frame1444 from '../img/Frame1444.jpg'
 import frame1445 from '../img/Frame1445.png'
 
 // Reklame images
-import image4 from '../img/image4.png'
-import image5 from '../img/image5.png'
+import image4 from '../img/Frame1441.jpg'
+import image5 from '../img/Frame1442.jpg'
 
 // Product images
-import cardimg1 from '../img/cardimg1.png'
-import cardimg2 from '../img/cardimg2.png'
-import cardimg3 from '../img/cardimg3.png'
-import cardimg4 from '../img/cardimg4.png'
+import cardimg1 from '../img/cardimg1.jpg'
+import cardimg2 from '../img/cardimg2.jpg'
+import cardimg3 from '../img/cardimg3.jpg'
+import cardimg4 from '../img/cardimg4.jpg'
 
 // Icons
 import qidiruv from '../img/icons/search.png'
