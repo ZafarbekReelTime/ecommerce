@@ -41,11 +41,11 @@ const Product = () => {
             <div className="flex items-center gap-x-5 mt-2">
               <span className="font-medium text-red-700">{item.text}</span>
               <p className="text-sm">{item.age}</p>
-              <p className="font-medium text-yellow-600 text-lg">{item.value}</p>
+              <p className="font-medium text-yellow-800 text-lg">{item.value}</p>
             </div>
 
             {item.prise && (
-              <p className="font-medium text-sm text-green-500 mt-1">{item.prise}</p>
+              <p className="font-medium text-sm text-green-700 mt-1">{item.prise}</p>
             )}
           </Link>
         ))}
