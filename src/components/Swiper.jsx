@@ -5,17 +5,14 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { datacode, dataImage } from "../assets/js/data";
 
-const images = [
-  dataImage.mainoffer,
-  dataImage.mainoffer,
-  dataImage.mainoffer,
-  dataImage.mainoffer,
-];
+// Faol rasm faqat bitta
+const images = [dataImage.mainoffer];
 
 const Swiper = () => {
   const mainSwiper = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  // 🔹 Loop faqat slide 2 yoki undan ko'p bo'lsa
   const loopEnabled = images.length > 1;
 
   return (
@@ -24,7 +21,7 @@ const Swiper = () => {
       <SwiperReact
         modules={[Autoplay]}
         loop={loopEnabled}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        autoplay={loopEnabled ? { delay: 4000, disableOnInteraction: false } : false}
         onSwiper={(swiper) => (mainSwiper.current = swiper)}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
         className="w-full h-full"
@@ -35,13 +32,15 @@ const Swiper = () => {
               {/* ✅ LCP-friendly img */}
               <img
                 src={img}
-                alt={`Slide ${index + 1} - Denim Collection`}
+                alt="Slide 1 - Denim Collection"
                 className="w-full h-full object-cover"
-                fetchpriority={index === 0 ? "high" : "auto"} // birinchi rasm LCP
+                fetchpriority="high" // birinchi rasm LCP
               />
 
-              {/* Overlay va content */}
-              <div className={`${datacode.container} h-full absolute top-0 left-0 flex items-end justify-end`}>
+              {/* Overlay content */}
+              <div
+                className={`${datacode.container} h-full absolute top-0 left-0 flex items-end justify-end`}
+              >
                 <div className="max-w-md bg-black/30 p-4 rounded-md mb-12 mr-28 max-md:mr-0 max-md:mb-28">
                   <h2 className="text-4xl md:text-5xl font-medium mb-3 text-white">
                     Denim Collection
@@ -73,28 +72,30 @@ const Swiper = () => {
       </SwiperReact>
 
       {/* PAGINATION – TOP RIGHT */}
-      <div className="absolute top-6 right-6 flex gap-5 md:gap-6 lg:gap-8 z-20">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => mainSwiper.current?.slideToLoop(index)}
-            aria-label={`Go to slide ${index + 1}`}
-            className="focus:outline-none"
-          >
-            <span
-              className={`transition-all duration-200 flex items-center justify-center
-                ${activeIndex === index
-                  ? "w-4 h-4 border-2 border-black rounded-full"
-                  : "w-2 h-2 bg-black/50 rounded-full"
-                }`}
+      {images.length > 1 && (
+        <div className="absolute top-6 right-6 flex gap-5 md:gap-6 lg:gap-8 z-20">
+          {images.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => mainSwiper.current?.slideToLoop(index)}
+              aria-label={`Go to slide ${index + 1}`}
+              className="focus:outline-none"
             >
-              {activeIndex === index && (
-                <span className="w-2 h-2 bg-black rounded-full" />
-              )}
-            </span>
-          </button>
-        ))}
-      </div>
+              <span
+                className={`transition-all duration-200 flex items-center justify-center
+                  ${activeIndex === index
+                    ? "w-4 h-4 border-2 border-black rounded-full"
+                    : "w-2 h-2 bg-black/50 rounded-full"
+                  }`}
+              >
+                {activeIndex === index && (
+                  <span className="w-2 h-2 bg-black rounded-full" />
+                )}
+              </span>
+            </button>
+          ))}
+        </div>
+      )}
     </section>
   );
 };
