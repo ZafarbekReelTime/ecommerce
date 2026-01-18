@@ -14,7 +14,7 @@ nav > a.active{
 
 /* Butun sahifa uchun scrollni o‘zgartirish */
 ::-webkit-scrollbar {
-  width: 2px; /* Scroll yo‘li kengligi */
+  width: 5px; /* Scroll yo‘li kengligi */
   height: 2px;
 }
 
