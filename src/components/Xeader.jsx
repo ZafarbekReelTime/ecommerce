@@ -56,7 +56,7 @@ const Xeader = () => {
                     <div className="flex items-center gap-x-5">
                         <div className="relative">
                             <img className="absolute top-[7px] right-[215px] z-20" width={35} height={35} src={dataImage.qidiruv} alt="Qidiruv Icon" />
-                            <input className="inpcolor px-9 py-3 rounded-full focus:outline-none placeholder:text-white placeholder:font-medium" type="search" placeholder="Search" />
+                            <input className="w-full max-w-xs inpcolor px-9 py-3 rounded-full focus:outline-none placeholder:text-white placeholder:font-medium" type="search" placeholder="Search" />
                         </div>
                         <div className="flex items-center gap-x-5">
                             <Link>
