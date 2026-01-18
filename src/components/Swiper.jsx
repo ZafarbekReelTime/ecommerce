@@ -28,7 +28,7 @@ const Swiper = () => {
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <section className="w-full h-[480px] md:h-[500px] lg:h-[525px] relative">
+            <section className="w-full h-[525px] relative">
               {/* ✅ LCP-friendly img */}
               <img
                 src={img}
