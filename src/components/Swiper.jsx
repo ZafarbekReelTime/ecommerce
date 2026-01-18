@@ -16,7 +16,6 @@ const Swiper = () => {
   const mainSwiper = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
 
-  // 🔹 Loop faqat slide soni 2 va undan ko'p bo'lsa
   const loopEnabled = images.length > 1;
 
   return (
@@ -32,35 +31,39 @@ const Swiper = () => {
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <section
-              className="w-full h-[480px] md:h-[500px] lg:h-[525px] bg-cover bg-center relative"
-              style={{ backgroundImage: `url(${img})` }}
-            >
-              <div className={`${datacode.container} h-full`}>
-                <div className="h-full flex max-md:mr-0 max-md:pb-28 items-end justify-end pb-12 mr-28">
-                  <div className="max-w-md bg-black/30 p-4 rounded-md">
-                    <h2 className="text-4xl md:text-5xl font-medium mb-3 text-white">
-                      Denim Collection
-                    </h2>
-                    <p className="mb-6 max-w-[220px] text-sm text-white/90">
-                      An enigmatic and contemporary collection that exalts
-                      nautical style through meticulous fabrics, prints, and
-                      precise forms.
-                    </p>
-                    <div className="flex items-center gap-4 md:gap-12">
-                      <Link
-                        to="/collection"
-                        className="px-4 py-2 border border-white/50 bg-black/70 text-white rounded-lg hover:bg-black/90 transition"
-                      >
-                        View Collection
-                      </Link>
-                      <button
-                        className="px-4 py-2 border border-white/50 bg-white text-black rounded-lg hover:bg-gray-100 transition"
-                        aria-label="Buy now"
-                      >
-                        Buy now
-                      </button>
-                    </div>
+            <section className="w-full h-[480px] md:h-[500px] lg:h-[525px] relative">
+              {/* ✅ LCP-friendly img */}
+              <img
+                src={img}
+                alt={`Slide ${index + 1} - Denim Collection`}
+                className="w-full h-full object-cover"
+                fetchpriority={index === 0 ? "high" : "auto"} // birinchi rasm LCP
+              />
+
+              {/* Overlay va content */}
+              <div className={`${datacode.container} h-full absolute top-0 left-0 flex items-end justify-end`}>
+                <div className="max-w-md bg-black/30 p-4 rounded-md mb-12 mr-28 max-md:mr-0 max-md:mb-28">
+                  <h2 className="text-4xl md:text-5xl font-medium mb-3 text-white">
+                    Denim Collection
+                  </h2>
+                  <p className="mb-6 max-w-[220px] text-sm text-white/90">
+                    An enigmatic and contemporary collection that exalts
+                    nautical style through meticulous fabrics, prints, and
+                    precise forms.
+                  </p>
+                  <div className="flex items-center gap-4 md:gap-12">
+                    <Link
+                      to="/collection"
+                      className="px-4 py-2 border border-white/50 bg-black/70 text-white rounded-lg hover:bg-black/90 transition"
+                    >
+                      View Collection
+                    </Link>
+                    <button
+                      className="px-4 py-2 border border-white/50 bg-white text-black rounded-lg hover:bg-gray-100 transition"
+                      aria-label="Buy now"
+                    >
+                      Buy now
+                    </button>
                   </div>
                 </div>
               </div>

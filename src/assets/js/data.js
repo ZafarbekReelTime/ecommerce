@@ -2,7 +2,7 @@
 // ALL IMAGE IMPORTS
 // =========================
 
-import logo from '../img/Logo/Logo.png'
+import logo from '../img/Logo/Logo.jpg'
 
 // Home swiper img
 import mainoffer from '../img/mainoffer.jpg'
