@@ -6,16 +6,18 @@ import PNF from "./pages/PNF";
 import Futured from "./pages/Futured";
 import Mens from "./pages/Mens";
 import Productz from "./components/Productz";
+import Women from "./pages/Women";
 
 const App = () => {
 
   const routes = createBrowserRouter(
-    createRoutesFromChildren(
-      <> 
+    createRoutesFromChildren( 
+      <>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/futured" element={<Futured />} />
-          <Route path="/mens" element={<Mens/>} />
+          <Route path="/mens" element={<Mens />} />
+          <Route path="/women" element={<Women />} />
           <Route path="product/:id" element={<Productz />} />
         </Route>
         <Route path="*" element={<PNF />} />

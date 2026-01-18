@@ -37,7 +37,7 @@ const Xeader = () => {
                 </section>
                 <section className={`${datacode.container} py-3 flex items-center justify-between max-md:hidden`}>
                     <Link aria-label="main page" to='/'>
-                        <img width={209} height={30} src={dataImage.logo} alt="" />
+                        <img className="w-full max-w-52 h-8" src={dataImage.logo} alt="" />
                     </Link>
                     <nav className="flex items-center gap-x-4 font-medium">
                         <Link to='/futured'>
@@ -74,14 +74,14 @@ const Xeader = () => {
             
             <section className={`${datacode.container} py-3 flex items-center justify-between sticky top-0 overflow-hidden bg-white z-50 md:hidden`}>
                 <Link to='/'>
-                    <img width={160} height={15} src={dataImage.logo} alt="logo" />
+                    <img className="w-full max-w-44 mt-2 md:max-w-48 lg:max-w-52  h-8" src={dataImage.logo} alt="logo" />
                 </Link>
                 <div className="flex items-center gap-x-3">
                     <Link>
-                        <img width={30} height={34} src={dataImage.qidiruv} alt="qidiruv" />
+                        <img className="w-full max-w-7 h-8" src={dataImage.qidiruv} alt="qidiruv" />
                     </Link>
                     <Link>
-                        <img width={17} height={16} src={dataImage.savat} alt="savat" />
+                        <img className="w-full max-w-3 h-4" src={dataImage.savat} alt="savat" />
                     </Link>
 
                     {/* menu button */}

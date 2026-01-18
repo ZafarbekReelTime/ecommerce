@@ -4,3 +4,29 @@
 
 }
 
+.cardimg {
+  height: 460px; /* Desktop default */
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .cardimg {
+    height: 360px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cardimg {
+    height: 380px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .cardimg {
+    height: 380px;
+  }
+}
