@@ -1,28 +1,27 @@
-import React from "react";
+import React, { memo } from "react";
 import { datacode, dataImage } from "../assets/js/data";
 
+const trendingItems = [
+  { img: dataImage.frame1437, text: "New from Jordan" },
+  { img: dataImage.frame1438, text: "Trail Running Essentials" },
+  { img: dataImage.frame1439, text: "Tourney-Ready Gear" },
+];
+
 const Tranding = () => {
-    return (
-        <section className={`${datacode.container} py-6`}>
-            <h3 className="my-9">
-                Trending
-            </h3>
-            <div className="flex max-md:flex-col items-center gap-x-5">
-                <div>
-                    <img src={dataImage.frame1437} alt="" />
-                    <p className="mt-4 max-md:mb-5" >New from Jordan</p>
-                </div>
-                <div>
-                    <img src={dataImage.frame1438} alt="" />
-                    <p className="mt-4 max-md:mb-5">Trail Running Essentials</p>
-                </div>
-                <div>
-                    <img src={dataImage.frame1439} alt="" />
-                    <p className="mt-4">Tourney-Ready Gear</p>
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <section className={`${datacode.container} py-6`}>
+      <h3 className="my-9 text-xl font-semibold">Trending</h3>
+      <div className="flex max-md:flex-col items-center gap-x-5">
+        {trendingItems.map((item, index) => (
+          <div key={index}>
+            <img src={item.img} alt={item.text} loading="lazy" className="rounded-md" />
+            <p className="mt-4 max-md:mb-5">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 };
 
-export default Tranding;
+// Memorize component to prevent unnecessary re-renders
+export default memo(Tranding);
